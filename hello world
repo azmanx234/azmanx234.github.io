@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang ="en">
+<head>
+<meta charset="utf-8">
+<title>DMS 321</title>
+</head>
+<body>
+<p>
+Hello, world!
+<br>
+<br>
+I am Mohammed's first HTML assignment! Thank you for making me!
+</p>
+<img src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/65532/happy-emoji-clipart-md.png" width= 430 height= 400 alt =
+"Happy Face">
+<p>
+Try playing my cousins! Here are the links to them.
+</p>
+<a href="https://editor.p5js.org/mohammed.azman68/full/g_n0Ycl4x">Cryo Chamber</a> (ESCAPE ROOM VIBES)
+<br>
+<br>
+<a href="https://editor.p5js.org/mohammed.azman68/full/l14-3DFj1">Balloon Game</a> (FUN)
+<br>
+<br>
+<a href="https://editor.p5js.org/mohammed.azman68/full/3Pd1zqpQl">Save the Spike Heads</a> (WARNING: EXTREMELY FRUSTRATING)
+</body>
+</html>
