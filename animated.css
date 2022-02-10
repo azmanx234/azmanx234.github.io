@@ -1,0 +1,54 @@
+body
+{
+margin:0;
+padding:0;
+animation: background infinite 20s;
+}
+
+
+@keyframes background {
+0%
+{
+background: #e74c3c;
+}
+10%
+{
+background: #00a8a8;
+}
+20%
+{
+background: #52ff52;
+}
+30%
+{
+background: #d6b600;
+}
+40%
+{
+background: #862323;
+}
+50%
+{
+background: #ff94c9;
+}
+60%
+{
+background: #000057;
+}
+70%
+{
+background: #d68b00;
+}
+80%
+{
+background: #808080;
+}
+90%
+{
+background: #2a52be;
+}
+100%
+{
+background: #acbf60;
+}
+}
