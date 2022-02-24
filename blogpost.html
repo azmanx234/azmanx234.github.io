@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<title>DMS 321 miniblog</title>
+</head>
+
+<body>
+
+<form action="/blogpost" method="POST">
+<label for="title">Title:</label><br>
+<input type="text" name="title">
+<br>
+<label for="message">Message:</label><br>
+<textarea name="message">
+</textarea>
+<br>
+<label for="messagetype">This is:</label>
+<select name="messagetype">
+ <option value="information">useful information</option>
+ <option value="rant">ranting</option>
+ <option value="flame">flaming</option>
+ <option value="clickbait">clickbait</option>
+</select>
+<br>
+<input type="submit" value="Post">
+</form>
+
+</body>
+
+</html>
