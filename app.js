@@ -60,13 +60,13 @@ app.get('/blog', function (req,res) {
     var output = '<h1>The Blog</h1>\n';
     for (i=0; i < blogposts.length; i++)
         {
-        output += `<div><h2>${blogposts[i].title}</h2><p>posted ${blogposts[i].date}</p><p>message type: ${blogposts[i].type}</p><p>${blogposts[i].body}</p></div>\n`;
+        output += `<div><h2>${blogposts[i].title}</h2><p>posted by ${blogposts[i].name} on ${blogposts[i].date}</p><p>message type: ${blogposts[i].type}</p><p>${blogposts[i].body}</p></div>\n`;
         }
     res.send(makeHTMLPage(output));
 });
 
 app.post('/blogpost', urlencodedParser, function (req, res) {
-    var newpost = { 'title': req.body.title, 'date': Date(), 'type': req.body.messagetype, 'body': req.body.message };
+    var newpost = { 'title': req.body.title, 'name': req.body.name, 'date': Date(), 'type': req.body.messagetype, 'body': req.body.message };
     blogposts.push(newpost);
     res.redirect('/blog');
 });
