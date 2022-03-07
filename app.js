@@ -78,14 +78,14 @@ app.get('/dolist', function (req,res) {
     var output = '<h1>To Do List</h1>\n';
     for (i=0; i < dolist.length; i++)
         {
-        output += `<div><h2>${dolist[i].title}</h2><p> ${dolist[i].description} <p> <a href = "${dolist[i].link}"> ${dolist[i].link}</a> </div>\n `;
+        output += `<div><h2> <a href = "/details"> ${dolist[i].title} </a> </div>\n `;
         }
     res.send(makeHTMLPage(output));
 });
 
 
-app.get('/details', function (req,res) {
-    var i = 0;
+app.get('/details/:choice', function (req,res) {
+    var i = req.params.choice;
     var output = '<h1>To Do List Entry</h1>\n';
     output += `<div><h2>${dolist[i].title}</h2><p> ${dolist[i].description} <p> <a href = "${dolist[i].link}"> ${dolist[i].link}</a> </div>\n `;
     res.send(makeHTMLPage(output));
