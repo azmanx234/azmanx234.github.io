@@ -72,11 +72,23 @@ app.post('/blogpost', urlencodedParser, function (req, res) {
 });
 
 
+var dolist = [ ];
 
+app.get('/dolist', function (req,res) {
+    var output = '<h1>To Do List</h1>\n';
+    for (i=0; i < dolist.length; i++)
+        {
+        output += `<div><h2>${dolist[i].title}</h2><p> ${dolist[i].description} <p> ${dolist[i].link}</div>\n`;
+        }
+    res.send(makeHTMLPage(output));
+});
 
 app.post('/submitform', urlencodedParser, function (req, res) {
-   var answer = makeHTMLPage(`<p>Hello, ${req.body.username}</p><p>Your message was:</p><pre>${req.body.message}</pre>`);
-   res.send(answer);
+    var newpost = { title: req.body.title, description: req.body.details, link: req.body.link };
+    dolist.push(newpost);
+    res.redirect('/dolist');
 });
+
+
 
 var server = app.listen(8081, function () {});
