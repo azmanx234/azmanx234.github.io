@@ -80,6 +80,13 @@ app.get('/dolist', function (req,res) {
         {
         output += `<div><h2> <a href = "/details/${i}"> ${dolist[i].title} </a> </div>\n `;
         }
+        /*
+        add a "done" to the list objects.
+        Should have the value 0 for something that is not done and 1 if it is done.
+        In code : if dolist[i].done == 0 { do something } else { do something else (ex changing the display styling)}
+        Then you need a routing function "/done/:choice" which will set that variable to 1
+        Finally get a link in that so that you can put it somewhere else such as another "done list" page
+        */
     res.send(makeHTMLPage(output));
 });
 
@@ -87,7 +94,7 @@ app.get('/dolist', function (req,res) {
 app.get('/details/:choice', function (req,res) {
     var i = req.params.choice;
     var output = '<h1>To Do List Entry</h1>\n';
-    output += `<div><h2>${dolist[i].title}</h2><p> ${dolist[i].description} <p> <a href = "${dolist[i].link}"> ${dolist[i].link}</a> </div>\n `;
+    output += `<div><h2>${dolist[i].title}</h2><p> ${dolist[i].description} <p> <a href = "${dolist[i].link}"> ${dolist[i].link} </a> </div>\n `;
     res.send(makeHTMLPage(output));
 });
 
