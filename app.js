@@ -78,7 +78,7 @@ app.get('/dolist', function (req,res) {
     var output = '<h1>To Do List</h1>\n';
     for (i=0; i < dolist.length; i++)
         {
-        output += `<div><h2>${dolist[i].title}</h2><p> ${dolist[i].description} <p> ${dolist[i].link}</div>\n`;
+        output += `<div><h2>${dolist[i].title}</h2><p> ${dolist[i].description} <p> <a href = "https://google.com"> ${dolist[i].link}</a> </div>\n `;
         }
     res.send(makeHTMLPage(output));
 });
