@@ -78,10 +78,19 @@ app.get('/dolist', function (req,res) {
     var output = '<h1>To Do List</h1>\n';
     for (i=0; i < dolist.length; i++)
         {
-        output += `<div><h2>${dolist[i].title}</h2><p> ${dolist[i].description} <p> <a href = "https://google.com"> ${dolist[i].link}</a> </div>\n `;
+        output += `<div><h2>${dolist[i].title}</h2><p> ${dolist[i].description} <p> <a href = "${dolist[i].link}"> ${dolist[i].link}</a> </div>\n `;
         }
     res.send(makeHTMLPage(output));
 });
+
+
+app.get('/details', function (req,res) {
+    var i = 0;
+    var output = '<h1>To Do List Entry</h1>\n';
+    output += `<div><h2>${dolist[i].title}</h2><p> ${dolist[i].description} <p> <a href = "${dolist[i].link}"> ${dolist[i].link}</a> </div>\n `;
+    res.send(makeHTMLPage(output));
+});
+
 
 app.post('/submitform', urlencodedParser, function (req, res) {
     var newpost = { title: req.body.title, description: req.body.details, link: req.body.link };
