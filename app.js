@@ -72,13 +72,13 @@ app.post('/blogpost', urlencodedParser, function (req, res) {
 });
 
 
-var dolist = [ ];
+var dolist = [ {title:"a" , description: "hello", link:"https://www.howtogeek.com/721416/how-to-turn-on-the-develop-menu-in-safari-on-mac/"}];
 
 app.get('/dolist', function (req,res) {
     var output = '<h1>To Do List</h1>\n';
     for (i=0; i < dolist.length; i++)
         {
-        output += `<div><h2> <a href = "/details"> ${dolist[i].title} </a> </div>\n `;
+        output += `<div><h2> <a href = "/details/${i}"> ${dolist[i].title} </a> </div>\n `;
         }
     res.send(makeHTMLPage(output));
 });
